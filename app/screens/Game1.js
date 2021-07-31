@@ -3,17 +3,17 @@ import { StyleSheet, Text, View, Image } from 'react-native';
 
 
 
-const Video = (props) => {
+const Game1 = (props) => {
 
 	return(
 		<View style = {Styles.container} >
-		<Text>AR components here</Text>
+		<Text>Game should be here..</Text>
 		</View>
 		)
 
 }
 
-export default Video;
+export default Game1;
 
 
 const Styles = StyleSheet.create({

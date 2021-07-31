@@ -9,6 +9,8 @@ import {createNativeStackNavigator} from 'react-native-screens/native-stack';
 import Game from './app/screens/Game';
 import Video from './app/screens/video';
 import Menu from './app/screens/Menu';
+import Game1 from './app/screens/Game1';
+import qrscanner from './app/screens/qrscanner';
 
 const Stack = createNativeStackNavigator();
 
@@ -20,6 +22,8 @@ function MenuBundle() {
             <Stack.Screen name='Menu' component={Menu}/>
             <Stack.Screen name='Game' component={Game}/>
             <Stack.Screen name='Video' component={Video}/>
+            <Stack.Screen name='Game1' component={Game1}/>
+            <Stack.Screen name='qrscanner' component={qrscanner}/>
         </Stack.Navigator>
     );
 
