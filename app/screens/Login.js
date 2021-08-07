@@ -60,7 +60,7 @@ const Login = ({ navigation }) => {
 					</View>
 				</TouchableOpacity>
 				
-				<TouchableOpacity style={Styles.gbutton}>
+				<TouchableOpacity style={Styles.gbutton} onPress={()=> navigation.navigate('mainScreen')}>
 					<View style={Styles.btntxt}>
 						<Text style={Styles.glogIn}>LOG IN WITH GOOGLE</Text>
 					</View>
