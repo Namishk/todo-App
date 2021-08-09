@@ -3,8 +3,22 @@ import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
 import { useFonts, Andika_400Regular} from '@expo-google-fonts/andika';
 import AppLoading from 'expo-app-loading';
 import colors from './../../Colors';
+import {game1, game2} from './../globalFunctions/gameUnlocker';
+
+
 
 const Game = ({navigation}) => {
+
+	const opener = (game) => {
+		if(game == 'Game1') {
+			if(game1) return navigation.navigate('Game1');
+			else return navigation.navigate('qrscanner');
+		}
+		else if(game == 'Game2') {
+			if(game2) return navigation.navigate('Game2');
+			else return navigation.navigate('qrscanner');
+		}
+	}
 
 	let [fontsLoaded] = useFonts({
 		Andika_400Regular
@@ -25,16 +39,16 @@ const Game = ({navigation}) => {
 
 			<TouchableOpacity
 			style={Styles.gameUnlocked}
-			onPress={()=> navigation.navigate('Game1')}
+			onPress={()=> opener('Game1')}
 			>
-				<Text>Game Unlocked</Text>
+				<Text>Game 1</Text>
 			</TouchableOpacity>
 
 			<TouchableOpacity
 			style={Styles.gameLocked}
-			onPress={()=> navigation.navigate('qrscanner')}
+			onPress={()=> opener('Game2')}
 			>
-				<Text>Game Locked</Text>
+				<Text>Game 2</Text>
 			</TouchableOpacity>
 		</View>
 

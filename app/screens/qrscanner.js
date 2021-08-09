@@ -1,8 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import { StyleSheet, Text, View, Image, Button } from 'react-native';
 import { BarCodeScanner } from 'expo-barcode-scanner';
-
-
+import game1Unlocker from '../globalFunctions/gameUnlocker';
 
 
 const qrscnner = (props) => {
@@ -17,9 +16,9 @@ const qrscnner = (props) => {
 		})();
 	  }, []);
 	
-	const handleBarCodeScanned = ({ type, data }) => {
+	const handleBarCodeScanned = ({ data }) => {
 		setScanned(true);
-		alert(`Bar code with type ${type} and data ${data} has been scanned!`);
+		game1Unlocker(data);
 	  };
 
 	  if (hasPermission === null) {
